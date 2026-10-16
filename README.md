@@ -149,9 +149,8 @@ pynput>=1.7.6
 ```
 model/weights/CS2-AimBot.pt
 ```
-
-> 仓库未内置权重文件（体积较大），请自行训练或从 Releases 下载。
-> 权重也可通过 [Roboflow Universe](https://universe.roboflow.com/my-workspace-aqzti/test-un5ld/dataset/4) 获取数据集后自行训练。
+> 可使用附带的CS2-AimBot.pt作为检测权重。
+> 也可通过 [Roboflow Universe](https://universe.roboflow.com/my-workspace-aqzti/test-un5ld/dataset/4) 获取数据集后自行训练。
 
 ### 6. 运行
 
@@ -341,7 +340,7 @@ Moving from (514, 422) to (871, 423)
 
 ## ⚖️ 免责声明 | Disclaimer
 
-本项目为 **计算机视觉课程设计作业**，仅用于**学习与研究**实时目标检测技术。
+本项目仅供计算机视觉、深度学习的学习与研究使用。严禁用于任何在线游戏作弊行为。
 
 请注意：
 
