@@ -1,0 +1,11 @@
+# 核心依赖 —— Python 3.9 / Windows
+ultralytics==8.3.147      # YOLOv8 目标检测框架（内含 YOLO API）
+opencv-python>=4.8.0      # 图像处理：高斯模糊、矩形框绘制、交互窗口
+Pillow>=10.0.0            # ImageGrab 屏幕区域捕获
+numpy>=1.24.0             # 图像数组运算
+pywin32>=306              # GetSystemMetrics 取分辨率 / GetAsyncKeyState 监听全局热键
+pynput>=1.7.6             # Controller.mouse.position 鼠标平滑移动
+
+# torch / torchvision 需按本机 CUDA 版本单独安装，例如：
+# pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+# 参考：https://pytorch.org/get-started/locally/
