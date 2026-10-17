@@ -13,9 +13,9 @@
 [![CUDA](https://img.shields.io/badge/CUDA-12.9-76B900?logo=nvidia&logoColor=white)](https://developer.nvidia.com/cuda-zone)
 [![Platform](https://img.shields.io/badge/platform-Windows%2010%2B-0078D4?logo=windows&logoColor=white)](https://www.microsoft.com/windows)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
-[![Stars](https://img.shields.io/github/stars/your-name/CS2-Headshot-Aimbot?style=social)](https://github.com/your-name/CS2-Headshot-Aimbot/stargazers)
-[![Forks](https://img.shields.io/github/forks/your-name/CS2-Headshot-Aimbot?style=social)](https://github.com/your-name/CS2-Headshot-Aimbot/network/members)
-[![Issues](https://img.shields.io/github/issues/your-name/CS2-Headshot-Aimbot)](https://github.com/your-name/CS2-Headshot-Aimbot/issues)
+[![Stars](https://img.shields.io/github/stars/QingLi-233/YOLOv8n-based_AimBot_for_CS2?style=social)](https://github.com/QingLi-233/YOLOv8n-based_AimBot_for_CS2/stargazers)
+[![Forks](https://img.shields.io/github/forks/QingLi-233/YOLOv8n-based_AimBot_for_CS2?style=social)](https://github.com/QingLi-233/YOLOv8n-based_AimBot_for_CS2/network/members)
+[![Issues](https://img.shields.io/github/issues/QingLi-233/YOLOv8n-based_AimBot_for_CS2)](https://github.com/QingLi-233/YOLOv8n-based_AimBot_for_CS2/issues)
 
 简体中文
 
@@ -101,8 +101,8 @@ ultralytics 8.3.147
 ### 1. 克隆仓库
 
 ```bash
-git clone https://github.com/your-name/CS2-Headshot-Aimbot.git
-cd CS2-Headshot-Aimbot
+git clone https://github.com/QingLi-233/YOLOv8n-based_AimBot_for_CS2.git
+cd YOLOv8n-based_AimBot_for_CS2
 ```
 
 ### 2. 创建 conda 环境
@@ -142,13 +142,10 @@ pynput>=1.7.6
 
 </details>
 
-### 5. 放置模型权重
+### 5. 获取模型权重
 
-把训练得到的权重重命名放到指定路径：
+获取权重，放置后在HeadshotAimbot.py中指定路径
 
-```
-model/weights/CS2-AimBot.pt
-```
 > 可使用附带的CS2-AimBot.pt作为检测权重。
 > 也可通过 [Roboflow Universe](https://universe.roboflow.com/my-workspace-aqzti/test-un5ld/dataset/4) 获取数据集后自行训练。
 
@@ -185,7 +182,7 @@ python HeadshotAimbot.py
 
 ## ⚙️ 参数配置 | Configuration
 
-核心参数集中在 `__init__` 中，按需修改即可：
+核心参数集中在全局参数中，按需修改即可：
 
 | 参数 | 默认值 | 说明 |
 | :--- | :--- | :--- |
