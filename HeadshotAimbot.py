@@ -12,6 +12,8 @@ import torch
 python HeadshotAimbot.py
 """
 
+CORE_MODEL_PATH = 'path/to/trained_model'
+
 class HeadshotAimbot:
     def __init__(self):
         # 屏幕区域设置
@@ -33,7 +35,7 @@ class HeadshotAimbot:
         self.mouse = Controller()
 
         # 加载模型
-        self.model = YOLO('model/weights/CS2-AimBot.pt')
+        self.model = YOLO(CORE_MODEL_PATH)
 
         # 状态控制
         self.aim_enabled = False
@@ -195,9 +197,9 @@ class HeadshotAimbot:
                 print(f"Moving from ({current_x}, {current_y}) to ({abs_x}, {abs_y})")
 
                 #计算移动后坐标
-                new_x = current_x + (abs_x - current_x) * 0.7
-                new_y = current_y + (abs_y - current_y) * 0.7
-                self.mouse.position = (int(new_x), int(new_y))
+                # new_x = current_x + (abs_x - current_x) * 0.7
+                # new_y = current_y + (abs_y - current_y) * 0.7f
+                # self.mouse.position = (int(new_x), int(new_y))
 
                 # 在显示图像上标记目标点
                 # cv2.circle(display_img,

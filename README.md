@@ -155,7 +155,7 @@ model/weights/CS2-AimBot.pt
 ### 6. 运行
 
 ```bash
-python main.py
+python HeadshotAimbot.py
 ```
 
 ---
@@ -180,8 +180,6 @@ python main.py
 | `T` | 恐怖分子阵营身体 | 🟡 黄色 | `(0, 255, 255)` |
 | `CT_HEAD` | 警察阵营头部 | 🟢 绿色 | `(0, 255, 0)` |
 | `T_HEAD` | 恐怖分子阵营头部 | 🔴 红色 | `(0, 0, 255)` |
-
-配色定义见 [`docs/images/code-class-colors.png`](./docs/images/code-class-colors.png)。
 
 ---
 
@@ -210,7 +208,7 @@ python main.py
 
 ```
 CS2-Headshot-Aimbot/
-├── main.py                      # 主程序：初始化 / 捕获 / 推理 / 瞄准 / 可视化
+├── HeadshotAimbot.py                      # 主程序：初始化 / 捕获 / 推理 / 瞄准 / 可视化
 ├── requirements.txt
 ├── LICENSE
 ├── README.md
@@ -227,14 +225,14 @@ CS2-Headshot-Aimbot/
 
 | 阶段 | 做了什么 | 代码 |
 | :--- | :--- | :--- |
-| 初始化 | 读取分辨率、定义配色、加载模型、设置捕获区 | [`code-load-model.png`](./docs/images/code-load-model.png) |
-| 屏幕捕获 | `ImageGrab.grab` 循环抓取指定区域 | [`code-screen-grab-loop.png`](./docs/images/code-screen-grab-loop.png) |
-| 图像预处理 | PIL→BGR 转换 + 高斯模糊降噪 | [`code-gaussian-blur.png`](./docs/images/code-gaussian-blur.png) |
-| 目标检测 | `YOLO.predict()` 静默推理 | [`code-yolo-predict.png`](./docs/images/code-yolo-predict.png) |
-| 目标处理 | 解析结果、绘制边框、计算中心点 | [`code-detection-results.png`](./docs/images/code-detection-results.png) |
-| 瞄准计算 | 找最近头部 → 相对坐标转绝对坐标 | [`code-nearest-head.png`](./docs/images/code-nearest-head.png) |
-| 鼠标控制 | `Controller.mouse.position` 平滑移动 | [`code-mouse-move.png`](./docs/images/code-mouse-move.png) |
-| 可视化 | 缩放显示 + FPS/计数叠加 | [`code-visualization.png`](./docs/images/code-visualization.png) |
+| 初始化 | 读取分辨率、定义配色、加载模型、设置捕获区 |
+| 屏幕捕获 | `ImageGrab.grab` 循环抓取指定区域 |
+| 图像预处理 | PIL→BGR 转换 + 高斯模糊降噪 |
+| 目标检测 | `YOLO.predict()` 静默推理 |
+| 目标处理 | 解析结果、绘制边框、计算中心点 |
+| 瞄准计算 | 找最近头部 → 相对坐标转绝对坐标 |
+| 鼠标控制 | `Controller.mouse.position` 平滑移动 |
+| 可视化 | 缩放显示 + FPS/计数叠加 |
 
 ---
 
@@ -264,8 +262,6 @@ model.train(
 )
 ```
 
-训练完成后将最佳权重重命名为 `CS2-AimBot.pt`，放入 `model/weights/`。
-
 ---
 
 ## ⚠️ 已知问题 | Known Issues
@@ -277,12 +273,6 @@ model.train(
 控制台持续输出同一组坐标，起点纹丝不动：
 
 ![控制台调试输出](./docs/images/console-move-debug.png)
-
-```
-Moving from (514, 422) to (871, 423)
-Moving from (514, 422) to (871, 423)
-...
-```
 
 **分析：**
 
